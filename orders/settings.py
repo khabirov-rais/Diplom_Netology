@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.vk'
+    'allauth.socialaccount.providers.vk',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -220,3 +221,5 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 60
+
+SPECTACULAR_SETTINGS = { 'TITLE': 'Моя API', 'DESCRIPTION': 'Описание моей API', 'VERSION': '1.0.0', 'CONTACT': { 'NAME': 'Имя', 'EMAIL': 'email@example.com', 'URL': 'https://example.com', }, 'LICENSE': { 'NAME': 'MIT License', 'URL': 'https://opensource.org/licenses/MIT', }, }

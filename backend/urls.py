@@ -4,6 +4,7 @@ from .views import PartnerUpdate, RegisterUser, LoginUser, CategoryView, ShopVie
     BasketView, \
     UserDetails, ContactView, OrderView, PartnerState, PartnerOrders, ConfirmUser
 from rest_framework.routers import DefaultRouter
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 r = DefaultRouter()
 r.register('products', ProductInfoView)
@@ -25,4 +26,5 @@ urlpatterns += [
     path('shops', ShopView.as_view(), name='shops'),
     path('basket', BasketView.as_view(), name='basket'),
     path('order', OrderView.as_view(), name='order'),
+    path('schema/', SpectacularAPIView.as_view(), name='schema'), path('docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'), path('redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
